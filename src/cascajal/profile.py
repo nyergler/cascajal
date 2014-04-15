@@ -19,6 +19,11 @@ def find_firefox():
 
 class Profile(object):
 
+    TEMPLATE_FILES = [
+        'prefs.js',
+        'extensions.ini',
+    ]
+
     def __init__(self, opts):
 
         self.options = opts
@@ -28,10 +33,29 @@ class Profile(object):
         # create the temporary profile directory
         self.location = tempfile.mkdtemp()
 
-        # copy prefs.js into it
-        file(os.path.join(self.location, 'prefs.js'), 'w').write(
-            pkgutil.get_data('cascajal', 'data/prefs.js') % self.options
+        os.mkdir(
+            os.path.join(self.location, 'extensions')
         )
+
+        file(
+            os.path.join(
+                self.location,
+                'extensions',
+                'jid1-bwQXQ9ZfPZiqdw@jetpack.xpi',
+            ),
+            'wb',
+        ).write(
+            pkgutil.get_data('cascajal', 'data/prontoprint/prontoprint.xpi'),
+        )
+
+        context = self.options.copy()
+        context['profile_dir'] = self.location
+
+        # copy templated files into it
+        for filename in self.TEMPLATE_FILES:
+            file(os.path.join(self.location, filename), 'w').write(
+                pkgutil.get_data('cascajal', 'data/%s' % (filename,)) % context
+            )
 
         return self
 
