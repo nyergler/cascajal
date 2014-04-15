@@ -4,4 +4,7 @@ News
 0.1
 ---
 
-*Release date: UNRELEASED*
+*Release date: 15 April 2014*
+
+* Initial implementation of wrapper script
+* Prontoprint Firefox add-on
