@@ -32,6 +32,7 @@ user_pref("extensions.lastAppVersion", "24.4.0");
 user_pref("extensions.lastPlatformVersion", "24.4.0");
 user_pref("extensions.pendingOperations", false);
 user_pref("extensions.shownSelectionUI", true);
+user_pref("extensions.sdk.console.logLevel", "all");
 user_pref("general.warnOnAboutConfig", false);
 user_pref("intl.charsetmenu.browser.cache", "UTF-8");
 user_pref("network.cookie.prefsMigrated", true);

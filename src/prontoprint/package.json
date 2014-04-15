@@ -1,0 +1,9 @@
+{
+  "name": "prontoprint",
+  "title": "prontoprint",
+  "id": "jid1-bwQXQ9ZfPZiqdw",
+  "description": "Print the loaded page and quit. Pronto.",
+  "author": "Nathan R. Yergler <nathan@yergler.net>",
+  "license": "MPL 2.0",
+  "version": "0.1"
+}
