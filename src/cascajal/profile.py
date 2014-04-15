@@ -4,6 +4,10 @@ import shutil
 import tempfile
 
 
+def find_firefox():
+    """Attempt to find a Firefox-like executable and return the path."""
+
+
 class Profile(object):
 
     def __init__(self, opts):

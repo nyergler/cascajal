@@ -40,7 +40,7 @@ setup(name='cascajal',
       install_requires=install_requires,
       entry_points={
           'console_scripts': [
-              'cascajal=cascajal:main',
+              'cascajal=cascajal.cli:main',
           ],
       },
       test_suite='cascajal.tests',
