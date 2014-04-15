@@ -7,6 +7,15 @@ import tempfile
 def find_firefox():
     """Attempt to find a Firefox-like executable and return the path."""
 
+    candidates = [
+        '/usr/bin/firefox',
+        '/usr/bin/iceweasel',
+    ]
+
+    for c in candidates:
+        if os.path.exists(c):
+            return c
+
 
 class Profile(object):
 
