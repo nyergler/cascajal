@@ -31,11 +31,17 @@ setup(name='cascajal',
       packages=find_packages('src'),
       package_dir={'': 'src'},
       include_package_data=True,
-      zip_safe=False,
+      package_data={
+          'cascajal': [
+              'data/*',
+          ],
+      },
+      zip_safe=True,
       install_requires=install_requires,
       entry_points={
           'console_scripts': [
               'cascajal=cascajal:main',
           ],
       },
+      test_suite='cascajal.tests',
 )
